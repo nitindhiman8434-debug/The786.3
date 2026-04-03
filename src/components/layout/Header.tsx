@@ -187,8 +187,9 @@ export default function Header() {
               <Link
                 href={item.href}
                 className={cn(
-                  'text-sm font-sans font-medium tracking-wide text-champagne/80',
+                  'relative text-sm font-sans font-medium tracking-wide text-champagne/80',
                   'hover:text-gold transition-colors duration-300',
+                  'after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full',
                   'py-2'
                 )}
               >

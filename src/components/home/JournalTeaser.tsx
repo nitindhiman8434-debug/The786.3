@@ -5,12 +5,132 @@ export default function JournalTeaser() {
     <section className="relative py-24 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <div className="relative aspect-[4/3] img-placeholder bg-gradient-to-br from-midnight-lighter to-plum/15 overflow-hidden">
-            <div className="relative z-10 flex flex-col items-center justify-center h-full">
-              <div className="w-14 h-14 border border-plum/15 rotate-45" />
+          {/* Image — editorial atmospheric scene */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+            {/* Base layered gradients */}
+            <div className="absolute inset-0 bg-gradient-to-br from-midnight via-plum/40 to-wine/50" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_70%,rgba(75,30,90,0.5),transparent_60%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(83,19,30,0.35),transparent_55%)]" />
+
+            {/* Subtle vignette */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(15,11,20,0.7))]" />
+
+            {/* Open book shape */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-56 sm:w-56 sm:h-64">
+              {/* Left page */}
+              <div
+                className="absolute left-0 top-0 w-1/2 h-full origin-right"
+                style={{
+                  background: 'linear-gradient(105deg, rgba(232,215,183,0.07) 0%, rgba(232,215,183,0.03) 60%, rgba(201,151,43,0.08) 100%)',
+                  borderLeft: '1px solid rgba(201,151,43,0.15)',
+                  borderTop: '1px solid rgba(201,151,43,0.1)',
+                  borderBottom: '1px solid rgba(201,151,43,0.1)',
+                  transform: 'perspective(400px) rotateY(12deg)',
+                }}
+              >
+                {/* Text lines on left page */}
+                <div className="pt-6 px-3 space-y-2">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={`l-${i}`}
+                      className="h-px bg-gradient-to-r from-gold/20 via-champagne/10 to-transparent"
+                      style={{ width: `${55 + Math.sin(i * 1.3) * 25}%` }}
+                    />
+                  ))}
+                </div>
+              </div>
+              {/* Right page */}
+              <div
+                className="absolute right-0 top-0 w-1/2 h-full origin-left"
+                style={{
+                  background: 'linear-gradient(255deg, rgba(232,215,183,0.07) 0%, rgba(232,215,183,0.03) 60%, rgba(201,151,43,0.08) 100%)',
+                  borderRight: '1px solid rgba(201,151,43,0.15)',
+                  borderTop: '1px solid rgba(201,151,43,0.1)',
+                  borderBottom: '1px solid rgba(201,151,43,0.1)',
+                  transform: 'perspective(400px) rotateY(-12deg)',
+                }}
+              >
+                {/* Text lines on right page */}
+                <div className="pt-6 px-3 space-y-2">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={`r-${i}`}
+                      className="h-px bg-gradient-to-l from-gold/20 via-champagne/10 to-transparent"
+                      style={{ width: `${50 + Math.cos(i * 1.5) * 25}%` }}
+                    />
+                  ))}
+                </div>
+              </div>
+              {/* Book spine */}
+              <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-full bg-gradient-to-b from-gold/25 via-gold/10 to-gold/25" />
             </div>
-            <div className="absolute inset-0 border border-plum/10" />
+
+            {/* Quill / pen silhouette */}
+            <div className="absolute right-[18%] top-[18%]" style={{ transform: 'rotate(-35deg)' }}>
+              {/* Pen shaft */}
+              <div className="w-px h-28 bg-gradient-to-b from-gold/40 via-gold/20 to-transparent" />
+              {/* Nib (triangle) */}
+              <div
+                className="absolute bottom-0 left-1/2 -translate-x-1/2"
+                style={{
+                  width: 0,
+                  height: 0,
+                  borderLeft: '3px solid transparent',
+                  borderRight: '3px solid transparent',
+                  borderTop: '10px solid rgba(201,151,43,0.35)',
+                }}
+              />
+              {/* Feather lines */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-10">
+                <div className="absolute top-1 left-0 w-full h-px bg-gold/15 -rotate-12 origin-right" />
+                <div className="absolute top-3 left-0 w-full h-px bg-gold/12 -rotate-6 origin-right" />
+                <div className="absolute top-5 left-0 w-full h-px bg-gold/10 rotate-0" />
+                <div className="absolute top-7 left-0 w-full h-px bg-gold/12 rotate-6 origin-right" />
+              </div>
+            </div>
+
+            {/* Flowing decorative gold lines at angles */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-[15%] left-[8%] w-32 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent rotate-12" />
+              <div className="absolute bottom-[25%] right-[10%] w-24 h-px bg-gradient-to-r from-transparent via-gold/12 to-transparent -rotate-6" />
+              <div className="absolute top-[60%] left-[5%] w-20 h-px bg-gradient-to-r from-transparent via-champagne/10 to-transparent rotate-3" />
+              <div className="absolute bottom-[15%] left-[20%] w-28 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent -rotate-12" />
+            </div>
+
+            {/* Floating ink dot particles */}
+            <div className="absolute inset-0 pointer-events-none">
+              {[
+                { top: '12%', left: '20%', size: 3, opacity: 0.35 },
+                { top: '25%', left: '72%', size: 2, opacity: 0.25 },
+                { top: '40%', left: '15%', size: 2.5, opacity: 0.2 },
+                { top: '55%', left: '80%', size: 2, opacity: 0.3 },
+                { top: '70%', left: '35%', size: 3, opacity: 0.15 },
+                { top: '80%', left: '60%', size: 2, opacity: 0.25 },
+                { top: '18%', left: '50%', size: 1.5, opacity: 0.2 },
+                { top: '65%', left: '85%', size: 2, opacity: 0.18 },
+                { top: '35%', left: '45%', size: 1.5, opacity: 0.22 },
+                { top: '88%', left: '25%', size: 2.5, opacity: 0.15 },
+              ].map((dot, i) => (
+                <div
+                  key={`ink-${i}`}
+                  className="absolute rounded-full bg-plum-light"
+                  style={{
+                    top: dot.top,
+                    left: dot.left,
+                    width: dot.size,
+                    height: dot.size,
+                    opacity: dot.opacity,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Corner accents */}
+            <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold/15" />
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold/15" />
+
+            {/* Subtle border */}
+            <div className="absolute inset-0 border border-plum/15 rounded-sm" />
           </div>
 
           {/* Content */}
