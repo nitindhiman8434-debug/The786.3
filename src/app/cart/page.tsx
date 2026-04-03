@@ -139,7 +139,7 @@ export default function CartPage() {
             {cartItems.map((item, index) => (
               <div
                 key={`${item.slug}-${item.size}`}
-                className="glass-card rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6"
+                className="glass-card rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6 relative"
               >
                 {/* Image */}
                 <div className="w-full sm:w-28 h-36 sm:h-28 img-placeholder rounded-lg flex-shrink-0 relative overflow-hidden">
