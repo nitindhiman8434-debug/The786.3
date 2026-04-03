@@ -18,8 +18,8 @@ export default function FooterNewsletter() {
         required
         className={cn(
           'flex-1 rounded-md px-4 py-3 text-sm font-sans',
-          'bg-midnight border border-plum/30',
-          'text-ivory placeholder:text-champagne/30',
+          'bg-obsidian border border-mauve/30',
+          'text-pearl placeholder:text-cream/25',
           'focus:border-gold focus:ring-1 focus:ring-gold',
           'transition-colors duration-300'
         )}
@@ -28,7 +28,7 @@ export default function FooterNewsletter() {
         type="submit"
         className={cn(
           'rounded-md px-6 py-3 text-sm font-sans font-semibold tracking-wide',
-          'bg-gold text-midnight',
+          'bg-gold text-obsidian',
           'hover:bg-gold-light active:bg-gold-dark',
           'transition-colors duration-300'
         )}

@@ -1,13 +1,22 @@
-// THE786 Design Tokens
+// THE786 Design Tokens — 9-Color Premium Palette
 export const colors = {
-  midnightOnyx: '#0F0B14',
-  royalPlum: '#4B1E5A',
-  imperialBurgundy: '#7A1E3A',
-  richBerryCrimson: '#770523',
-  deepWineMaroon: '#53131E',
-  amberGold: '#C9972B',
-  champagneGlow: '#E8D7B7',
-  ivorySilk: '#F7F2EA',
+  obsidian: '#0A0A0F',
+  charcoal: '#141419',
+  graphite: '#1E1E26',
+  slate: '#2A2A35',
+  mauve: '#3D2B4E',
+  plum: '#5C2D6E',
+  rose: '#8B3A62',
+  blush: '#C4607A',
+  gold: '#D4A853',
+  goldLight: '#E4C078',
+  cream: '#F5EDE0',
+  pearl: '#FAF7F2',
+  copper: '#B87333',
+  bronze: '#8B6914',
+  sage: '#7A8B6F',
+  taupe: '#8B7D6B',
+  silver: '#C0C0C8',
 } as const;
 
 export const brand = {

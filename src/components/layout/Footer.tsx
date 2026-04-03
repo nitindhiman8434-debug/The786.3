@@ -27,7 +27,7 @@ function FooterLinkList({
           <Link
             href={link.href}
             className={cn(
-              'text-sm font-sans text-champagne/60',
+              'text-sm font-sans text-cream/50',
               'hover:text-gold transition-colors duration-300'
             )}
           >
@@ -41,7 +41,7 @@ function FooterLinkList({
 
 export default function Footer() {
   return (
-    <footer className="bg-midnight-light" role="contentinfo">
+    <footer className="bg-charcoal" role="contentinfo">
       {/* Top divider */}
       <div className="section-divider" aria-hidden="true" />
 
@@ -51,14 +51,14 @@ export default function Footer() {
           {/* Col 1 -- Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="font-serif text-2xl font-bold tracking-[0.25em] text-ivory">
+              <span className="font-serif text-2xl font-bold tracking-[0.25em] text-pearl">
                 {brand.name}
               </span>
             </Link>
-            <p className="mt-3 font-serif text-base italic text-champagne/70">
+            <p className="mt-3 font-serif text-base italic text-cream/60">
               {brand.tagline}
             </p>
-            <p className="mt-4 text-sm font-sans leading-relaxed text-champagne/50 max-w-xs">
+            <p className="mt-4 text-sm font-sans leading-relaxed text-cream/40 max-w-xs">
               {brand.description}. Handcrafted in limited batches for those who
               prefer to be felt, not announced.
             </p>
@@ -89,12 +89,12 @@ export default function Footer() {
         </div>
 
         {/* ---- Newsletter ---- */}
-        <div className="mt-16 pt-10 border-t border-plum/20">
+        <div className="mt-16 pt-10 border-t border-mauve/20">
           <div className="max-w-xl mx-auto text-center lg:text-left lg:mx-0">
-            <h3 className="font-serif text-2xl text-ivory tracking-wide">
+            <h3 className="font-serif text-2xl text-pearl tracking-wide">
               Join the Inner Circle
             </h3>
-            <p className="mt-2 text-sm font-sans text-champagne/50">
+            <p className="mt-2 text-sm font-sans text-cream/40">
               First access to new fragrances, exclusive offers, and stories from the atelier.
             </p>
 
@@ -107,7 +107,7 @@ export default function Footer() {
       <div className="section-divider" aria-hidden="true" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-champagne/40">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-cream/35">
           <p>&copy; 2024 {brand.name}. All rights reserved.</p>
 
           <div className="flex items-center gap-5">
@@ -117,7 +117,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contact us on WhatsApp"
-              className="text-champagne/40 hover:text-gold transition-colors duration-300"
+              className="text-cream/35 hover:text-gold transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Footer() {
             <a
               href="#"
               aria-label="Follow us on Instagram"
-              className="text-champagne/40 hover:text-gold transition-colors duration-300"
+              className="text-cream/35 hover:text-gold transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@ export default function Footer() {
             <a
               href="#"
               aria-label="Follow us on Facebook"
-              className="text-champagne/40 hover:text-gold transition-colors duration-300"
+              className="text-cream/35 hover:text-gold transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

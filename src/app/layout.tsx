@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-midnight text-ivory font-sans">
+      <body className="min-h-full flex flex-col bg-obsidian text-pearl font-sans">
         <AnnouncementBar />
         <Header />
         <main className="flex-1">{children}</main>

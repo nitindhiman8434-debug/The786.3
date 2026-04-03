@@ -137,7 +137,9 @@ export default function Header() {
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [mobileOpen]);
 
   const handleDropdownEnter = () => {
@@ -154,7 +156,7 @@ export default function Header() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
         scrolled
-          ? 'bg-midnight/95 backdrop-blur-md shadow-lg shadow-midnight/30'
+          ? 'bg-charcoal/95 backdrop-blur-md shadow-lg shadow-obsidian/40'
           : 'bg-transparent'
       )}
     >
@@ -166,7 +168,7 @@ export default function Header() {
         {/* Left: Logo */}
         <Link
           href="/"
-          className="relative z-10 font-serif text-xl sm:text-2xl font-bold tracking-[0.25em] text-ivory hover:text-gold transition-colors duration-300"
+          className="relative z-10 font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-pearl hover:text-gold transition-colors duration-300"
         >
           {brand.name}
         </Link>
@@ -187,9 +189,9 @@ export default function Header() {
               <Link
                 href={item.href}
                 className={cn(
-                  'relative text-sm font-sans font-medium tracking-wide text-champagne/80',
+                  'relative text-sm font-sans font-medium tracking-wide text-cream/70',
                   'hover:text-gold transition-colors duration-300',
-                  'after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full',
+                  'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full',
                   'py-2'
                 )}
               >
@@ -209,10 +211,10 @@ export default function Header() {
                 >
                   <ul
                     className={cn(
-                      'min-w-[200px] rounded-md py-3 px-1',
-                      'bg-midnight-light/95 backdrop-blur-lg',
-                      'border border-plum/30',
-                      'shadow-xl shadow-midnight/50'
+                      'min-w-[210px] rounded-md py-3 px-1',
+                      'bg-graphite/95 backdrop-blur-lg',
+                      'border border-mauve/30',
+                      'shadow-xl shadow-obsidian/60'
                     )}
                   >
                     {item.children.map((child) => (
@@ -221,7 +223,7 @@ export default function Header() {
                           href={child.href}
                           className={cn(
                             'block px-4 py-2 rounded text-sm font-sans',
-                            'text-champagne/70 hover:text-gold hover:bg-plum/20',
+                            'text-cream/70 hover:text-gold hover:bg-mauve/20',
                             'transition-colors duration-200'
                           )}
                         >
@@ -241,7 +243,7 @@ export default function Header() {
           <Link
             href="/search"
             aria-label="Search"
-            className="text-champagne/70 hover:text-gold transition-colors duration-300"
+            className="text-cream/70 hover:text-gold transition-colors duration-300"
           >
             <SearchIcon />
           </Link>
@@ -249,14 +251,14 @@ export default function Header() {
           <Link
             href="/cart"
             aria-label="Shopping cart"
-            className="relative text-champagne/70 hover:text-gold transition-colors duration-300"
+            className="relative text-cream/70 hover:text-gold transition-colors duration-300"
           >
             <BagIcon />
-            {/* Cart badge -- always show 0 as static; replace with cart state */}
+            {/* Cart badge */}
             <span
               className={cn(
                 'absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center',
-                'rounded-full bg-gold text-midnight text-[10px] font-bold leading-none'
+                'rounded-full bg-gold text-obsidian text-[10px] font-bold leading-none'
               )}
               aria-hidden="true"
             >
@@ -267,7 +269,7 @@ export default function Header() {
           <Link
             href="/account"
             aria-label="Account"
-            className="hidden sm:block text-champagne/70 hover:text-gold transition-colors duration-300"
+            className="hidden sm:block text-cream/70 hover:text-gold transition-colors duration-300"
           >
             <UserIcon />
           </Link>
@@ -277,7 +279,7 @@ export default function Header() {
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
-            className="lg:hidden text-champagne/80 hover:text-gold transition-colors duration-300"
+            className="lg:hidden text-cream/80 hover:text-gold transition-colors duration-300"
           >
             {mobileOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -289,7 +291,7 @@ export default function Header() {
         className="h-px w-full"
         style={{
           background:
-            'linear-gradient(90deg, transparent, #4B1E5A, #C9972B, #4B1E5A, transparent)',
+            'linear-gradient(90deg, transparent, #3D2B4E, #D4A853, #3D2B4E, transparent)',
         }}
         aria-hidden="true"
       />
@@ -297,7 +299,7 @@ export default function Header() {
       {/* ---- Mobile Full-Screen Overlay ---- */}
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-midnight/98 backdrop-blur-md',
+          'fixed inset-0 z-40 bg-obsidian/98 backdrop-blur-md',
           'flex flex-col lg:hidden',
           'transition-all duration-500',
           mobileOpen
@@ -321,7 +323,7 @@ export default function Header() {
                   onClick={() => setMobileOpen(false)}
                   className={cn(
                     'block py-3 font-serif text-2xl font-semibold tracking-wide',
-                    'text-ivory hover:text-gold transition-colors duration-300',
+                    'text-pearl hover:text-gold transition-colors duration-300',
                     'animate-fade-in'
                   )}
                   style={{ animationDelay: `${idx * 80}ms` }}
@@ -330,7 +332,7 @@ export default function Header() {
                 </Link>
 
                 {'children' in item && item.children && (
-                  <ul className="ml-4 mt-1 mb-2 space-y-1 border-l border-plum/40 pl-4">
+                  <ul className="ml-4 mt-1 mb-2 space-y-1 border-l border-mauve/40 pl-4">
                     {item.children.map((child) => (
                       <li key={child.label}>
                         <Link
@@ -338,7 +340,7 @@ export default function Header() {
                           onClick={() => setMobileOpen(false)}
                           className={cn(
                             'block py-1.5 text-base font-sans',
-                            'text-champagne/60 hover:text-gold transition-colors duration-200'
+                            'text-cream/60 hover:text-gold transition-colors duration-200'
                           )}
                         >
                           {child.label}
@@ -352,11 +354,11 @@ export default function Header() {
           </ul>
 
           {/* Mobile account link */}
-          <div className="mt-10 pt-6 border-t border-plum/30">
+          <div className="mt-10 pt-6 border-t border-mauve/30">
             <Link
               href="/account"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-3 text-champagne/70 hover:text-gold transition-colors"
+              className="flex items-center gap-3 text-cream/70 hover:text-gold transition-colors"
             >
               <UserIcon />
               <span className="font-sans text-sm tracking-wide">My Account</span>

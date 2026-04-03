@@ -12,7 +12,7 @@ export default function AnnouncementBar() {
     <div
       role="banner"
       className={cn(
-        'relative z-50 bg-gold text-midnight py-2 px-4 text-center',
+        'relative z-50 bg-gradient-to-r from-gold via-gold-light to-gold text-obsidian py-2 px-4 text-center',
         'text-xs sm:text-sm font-medium tracking-wide'
       )}
     >
@@ -26,7 +26,7 @@ export default function AnnouncementBar() {
         aria-label="Dismiss announcement"
         className={cn(
           'absolute right-3 top-1/2 -translate-y-1/2',
-          'text-midnight/70 hover:text-midnight transition-colors',
+          'text-obsidian/70 hover:text-obsidian transition-colors',
           'p-1'
         )}
       >
